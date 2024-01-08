@@ -3,6 +3,7 @@ import Book from "./Book";
 import BestBooks from "./ui/BestBooks";
 
 const Featured = () => {
+  console.log(BestBooks)
   return (
     <section id="features">
       <div className="container">

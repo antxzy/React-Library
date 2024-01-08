@@ -78,35 +78,74 @@ function App() {
   }
 
   return (
-    <Router>
-      <div className="App">
+    <div className="App">
         <Nav numberOfItems={numberOfItems()} />
-        <Home />
+
         <Routes>
-        <Route path="/" exact render={() => <Home books={books} />} />
-        <Route path="/books" exact render={() => <Books books={books} />} />
+
+        <Route path="/" element={<Home  books={books} />} /> 
+
+        <Route path="/books" element={<Books books={books} />} />
+
         <Route
           path="/books/:id"
-          render={() => (
-            <BookInfo books={books} addItemToCart={addItemToCart} />
-            )}
-            />
+          element={<BookInfo books={books} addItemToCart={addItemToCart} />
+            } />
+
         <Route
           path="/cart"
-          render={() => (
-            <Cart
+          element={<Cart
             cart={cart}
             updateCart={updateCart}
             removeItem={removeItem}
             totals={calcPrices()}
-            />
-            )}
-            />
+            />} />
+
             </Routes>
         <Footer />
       </div>
-    </Router>
   );
 }
 
+
 export default App;
+
+
+
+
+
+
+
+
+
+
+
+//   return (
+//     <div className="App">
+//       <Nav numberOfItems={numberOfItems()} />
+
+//       <Routes>
+//         <Route path="/books" element={<Books books={books} />} />
+//         <Route
+//           path="/books/:id"
+//           element={<BookInfo books={books} addItemToCart={addItemToCart} />}
+//         />
+//         <Route
+//           path="/cart"
+//           element={
+//             <Cart
+//               cart={cart}
+//               updateCart={updateCart}
+//               removeItem={removeItem}
+//               totals={calcPrices()}
+//             />
+//           }
+//         />
+//         <Route path="/" element={<Home books={books} />} />
+//       </Routes>
+//       <Footer />
+//     </div>
+//   );
+//         }
+
+// export default App;
